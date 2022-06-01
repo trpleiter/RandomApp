@@ -1,7 +1,9 @@
-<p>country-info works!</p>
-<a
-  *ngFor="let country of countryInformation"
-  routerLink="{{ country.name.official }}"
->
-  {{ country.flag }}{{ country.name.official }}
-</a>
+<div class="page-container">
+  <div class="overview-countries">
+    <div class="country-card" *ngFor="let country of countryInformation">
+      <a routerLink="{{ country.name.official }}">
+        {{ country.flag }} {{ country.name.official }}
+      </a>
+    </div>
+  </div>
+</div>
