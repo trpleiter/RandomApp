@@ -19,7 +19,6 @@ export class OverviewComponent implements OnInit {
       .getLoremText$()
       .pipe(
         tap((response) => {
-          console.log(response);
           this.randomText = response;
         }),
         catchError((error) => {

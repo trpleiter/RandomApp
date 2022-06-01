@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { CountryDetailsComponent } from './pages/country-info/containers/country-details/country-details.component';
+import { CountryInfoComponent } from './pages/country-info/country-info.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RandomUsersComponent } from './pages/random-users/random-users.component';
@@ -19,27 +22,18 @@ const routes: Routes = [
     path: 'random-users',
     component: RandomUsersComponent,
   },
-
-  // {
-  //   path: 'dashboard',
-  //   loadChildren: () =>
-  //     import('./pages/dashboard/dashboard.module').then(
-  //       (mod) => DashboardModule
-  //     ),
-  // },
-  // {
-  //   path: 'login',
-  //   loadChildren: () =>
-  //     import('./pages/auth/auth.module').then((mod) => LoginModule),
-  // },
-  // {
-  //   path: 'validate',
-  //   component: ValidateAccountComponent,
-  // },
-  // {
-  //   path: 'reset-password',
-  //   component: ResetPasswordComponent,
-  // },
+  {
+    path: 'country-information',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./pages/country-info/country-info.module').then(
+            (mod) => mod.CountryInfoModule
+          ),
+      },
+    ],
+  },
   {
     path: '**',
     component: PageNotFoundComponent,

@@ -1,0 +1,7 @@
+<p>country-info works!</p>
+<a
+  *ngFor="let country of countryInformation"
+  routerLink="{{ country.name.official }}"
+>
+  {{ country.flag }}{{ country.name.official }}
+</a>

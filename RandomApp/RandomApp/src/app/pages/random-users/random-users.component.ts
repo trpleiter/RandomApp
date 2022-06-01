@@ -18,7 +18,6 @@ export class RandomUsersComponent implements OnInit {
       .getRandomUser$()
       .pipe(
         tap((response) => {
-          console.log(response);
           this.randomUser = response;
         }),
         catchError((error) => {
@@ -35,7 +34,6 @@ export class RandomUsersComponent implements OnInit {
       .getRandomUser$()
       .pipe(
         tap((response) => {
-          console.log(response);
           this.randomUser = response;
         }),
         catchError((error) => {
