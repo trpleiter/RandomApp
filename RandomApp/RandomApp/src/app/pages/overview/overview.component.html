@@ -4,7 +4,28 @@
     <button class="btn btn-primary" type="button" (click)="onGetLoremText()">
       Get some random Lorem text
     </button>
-
-    <p *ngIf="randomText !== undefined">{{ randomText.very_long_sentence }}</p>
+    <div class="lorem-response" *ngIf="randomText !== undefined">
+      <p>
+        {{ randomText.very_long_sentence }}
+      </p>
+      <p class="lorem-question">{{ randomText.questions[6] }}</p>
+      <p>
+        {{ randomText.paragraphs[0] }}
+        {{ randomText.paragraphs[1] }}
+        {{ randomText.paragraphs[2] }}
+      </p>
+      <p class="lorem-question">{{ randomText.questions[3] }}</p>
+      <p>
+        {{ randomText.paragraphs[1] }}
+        {{ randomText.paragraphs[0] }}
+        {{ randomText.paragraphs[2] }}
+      </p>
+      <p class="lorem-question">{{ randomText.questions[0] }}</p>
+      <p>
+        {{ randomText.paragraphs[2] }}
+        {{ randomText.paragraphs[0] }}
+        {{ randomText.paragraphs[1] }}
+      </p>
+    </div>
   </div>
 </div>

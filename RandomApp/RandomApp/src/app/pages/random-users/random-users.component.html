@@ -1,2 +1,52 @@
 <app-navigation-bar></app-navigation-bar>
-<p>random-users works!</p>
+<div class="random-user-container" *ngIf="randomUser !== undefined">
+  <div class="card mb-3" style="max-width: 720px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="{{ randomUser.avatar }}"
+          alt="avatar"
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ randomUser.first_name }} {{ randomUser.last_name }}
+          </h5>
+          <h6>
+            <small class="text-muted">{{ randomUser.gender }}</small>
+          </h6>
+          <p class="card-text">
+            {{ randomUser.first_name }} {{ randomUser.last_name }} works as a(n)
+            {{ randomUser.employment.title }}. The key skill of this user is
+            {{ randomUser.employment.key_skill }}
+          </p>
+          <p class="card-text">
+            <small class="text-muted"
+              ><ul class="contact-card">
+                Get in contact with this user:
+              </ul>
+              <li class="contact-card-item">
+                {{ randomUser.address.city }}, {{ randomUser.address.state }}
+              </li>
+              <li class="contact-card-item">
+                {{ randomUser.address.country }}
+              </li>
+              <li class="contact-card-item">
+                {{ randomUser.address.street_address }},
+                {{ randomUser.address.street_name }}
+              </li>
+              <li class="contact-card-item">
+                {{ randomUser.address.zip_code }}
+              </li></small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="button" (click)="onRefreshUser()">
+      I want to generate a new random user
+    </button>
+  </div>
+</div>

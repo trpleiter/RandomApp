@@ -9,6 +9,8 @@ export class RandomUserService {
   constructor(private http: HttpClient) {}
 
   getRandomUser$(): Observable<any> {
-    return this.http.get<any>(`https://randomuser.me/api/`);
+    return this.http.get<any>(
+      `https://random-data-api.com/api/users/random_user`
+    );
   }
 }

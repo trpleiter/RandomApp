@@ -11,3 +11,5 @@ export interface ILoremText {
   question: string;
   questions: string[];
 }
+
+export interface ILoremWords {}
