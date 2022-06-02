@@ -1,0 +1,13 @@
+<div class="league-container">
+  <div
+    class="card"
+    style="width: 16rem"
+    *ngFor="let league of footballLeagues"
+    routerLink="{{ league.id }}"
+  >
+    <img [src]="league.logos.light" class="card-img-top" alt="league logo" />
+    <div class="card-body">
+      <p class="card-text">{{ league.name }}</p>
+    </div>
+  </div>
+</div>

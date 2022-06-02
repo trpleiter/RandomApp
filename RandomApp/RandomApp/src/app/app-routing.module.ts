@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { CountryDetailsComponent } from './pages/country-info/containers/country-details/country-details.component';
-import { CountryInfoComponent } from './pages/country-info/country-info.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RandomUsersComponent } from './pages/random-users/random-users.component';
@@ -21,6 +18,18 @@ const routes: Routes = [
   {
     path: 'random-users',
     component: RandomUsersComponent,
+  },
+  {
+    path: 'football',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./pages/football/football.module').then(
+            (mod) => mod.FootballModule
+          ),
+      },
+    ],
   },
   {
     path: 'country-information',
