@@ -16,7 +16,6 @@ export class FootballComponent implements OnInit {
       .getFootballLeagues$()
       .pipe(
         tap((response) => {
-          console.log(response);
           this.footballLeagues = response.data;
         }),
         catchError((error) => {
