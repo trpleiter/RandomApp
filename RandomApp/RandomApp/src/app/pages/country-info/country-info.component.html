@@ -1,9 +1,70 @@
 <div class="page-container">
-  <div class="overview-countries">
-    <div class="country-card" *ngFor="let country of countryInformation">
-      <a routerLink="{{ country.name.official }}">
-        {{ country.flag }} {{ country.name.official }}
-      </a>
+  <h1>Want to know the basics of all countries in the world?</h1>
+
+  <form class="search-country-by-name">
+    <label for="inputCountry" class="form-label">Search country by name</label>
+    <input
+      #inputCountryName
+      type="text"
+      id="inputCountryName"
+      class="form-control"
+      aria-describedby="textHelpBlock"
+    />
+  </form>
+
+  <form class="search-country-by-name">
+    <label for="inputCountry" class="form-label"
+      >Search country by currency</label
+    >
+    <input
+      #inputCountryCurrency
+      type="text"
+      id="inputCountryCurreny"
+      class="form-control"
+      aria-describedby="textHelpBlock"
+    />
+  </form>
+  <form class="search-country-by-name">
+    <label for="inputCountry" class="form-label"
+      >Search country by capital</label
+    >
+    <input
+      #inputCountryCapital
+      type="text"
+      id="inputCountryCapital"
+      class="form-control"
+      aria-describedby="textHelpBlock"
+    />
+  </form>
+
+  <form class="search-country-by-name">
+    <label for="inputCountry" class="form-label"
+      >Search country by region</label
+    >
+    <input
+      #inputCountryRegion
+      type="text"
+      id="inputCountryRegion"
+      class="form-control"
+      aria-describedby="textHelpBlock"
+    />
+  </form>
+
+  <p *ngIf="countryInformation !== undefined">
+    There are {{ countryInformation.length }} countries that meet your criteria
+  </p>
+  <span *ngIf="toggleError">Something went wrong, there are no results.</span>
+  <div class="overview-countries" *ngIf="!toggleError">
+    <div
+      class="card"
+      style="width: 12rem"
+      *ngFor="let country of countryInformation"
+      routerLink="{{ country.name.official }}"
+    >
+      <img [src]="country.flags.svg" class="card-img-top" alt="country flag" />
+      <div class="card-body">
+        <p class="card-text">{{ country.name.official }}</p>
+      </div>
     </div>
   </div>
 </div>

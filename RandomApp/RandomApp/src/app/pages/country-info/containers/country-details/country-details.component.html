@@ -1,1 +1,12 @@
-<p>country-details works!</p>
+<p *ngIf="countryDetails !== undefined">
+  {{ countryDetails[0].flag }} {{ countryDetails[0].name.common }} there are
+  {{ countryDetails[0].population }} people living in this country, the capital
+  of {{ countryDetails[0].name.common }} is {{ countryDetails[0].capital }} and
+  it is part of {{ countryDetails[0].continents[0] }}.
+</p>
+<ul *ngIf="countryLanguages !== undefined">
+  They speak:
+  <li *ngFor="let language of countryLanguages">
+    {{ language }}
+  </li>
+</ul>

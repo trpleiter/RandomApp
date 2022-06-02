@@ -11,4 +11,25 @@ export class CountryInformationService {
   getAllCountryInformation$(): Observable<any> {
     return this.http.get<any>(`https://restcountries.com/v3.1/all`);
   }
+
+  getCountryInformationByName$(name: string): Observable<any> {
+    return this.http.get<any>(`https://restcountries.com/v3.1/name/${name}`);
+  }
+
+  getCountryInformationByCurrency$(currency: string): Observable<any> {
+    return this.http.get<any>(
+      `https://restcountries.com/v3.1/currency/${currency}`
+    );
+  }
+
+  getCountryInformationByCapital$(capital: string): Observable<any> {
+    return this.http.get<any>(
+      `https://restcountries.com/v3.1/capital/${capital}`
+    );
+  }
+  getCountryInformationByRegion$(region: string): Observable<any> {
+    return this.http.get<any>(
+      `https://restcountries.com/v3.1/region/${region}`
+    );
+  }
 }
