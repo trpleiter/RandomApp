@@ -1,0 +1,16 @@
+<h3>{{ randomCocktail.drinks[0].strDrink }}</h3>
+<h6>{{ randomCocktail.drinks[0].strAlcoholic }}</h6>
+<img
+  src="{{ randomCocktail.drinks[0].strDrinkThumb }}"
+  alt="cocktail"
+  class="cocktail-image"
+/>
+<ul>
+  ingredients
+  <li>{{ randomCocktail.drinks[0].strIngredient1 }}</li>
+  <li>{{ randomCocktail.drinks[0].strIngredient2 }}</li>
+  <li>{{ randomCocktail.drinks[0].strIngredient3 }}</li>
+</ul>
+
+<p>instructions:</p>
+<p>{{ randomCocktail.drinks[0].strInstructions }}</p>

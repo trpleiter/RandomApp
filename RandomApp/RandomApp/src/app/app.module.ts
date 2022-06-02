@@ -8,6 +8,8 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { RandomUsersComponent } from './pages/random-users/random-users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageTitleComponent } from './components/page-title/page-title.component';
+import { CocktailComponent } from './pages/cocktail/cocktail.component';
+import { OtherRandomDataComponent } from './pages/other-random-data/other-random-data.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { PageTitleComponent } from './components/page-title/page-title.component
     NavigationBarComponent,
     RandomUsersComponent,
     PageTitleComponent,
+    CocktailComponent,
+    OtherRandomDataComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

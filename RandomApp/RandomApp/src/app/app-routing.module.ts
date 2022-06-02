@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CocktailComponent } from './pages/cocktail/cocktail.component';
+import { OtherRandomDataComponent } from './pages/other-random-data/other-random-data.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RandomUsersComponent } from './pages/random-users/random-users.component';
@@ -30,6 +32,14 @@ const routes: Routes = [
           ),
       },
     ],
+  },
+  {
+    path: 'cocktails',
+    component: CocktailComponent,
+  },
+  {
+    path: 'other-random-data',
+    component: OtherRandomDataComponent,
   },
   {
     path: 'country-information',
