@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { catchError, EMPTY, finalize, tap } from 'rxjs';
-import { IFootballRootObject } from 'src/app/core/interfaces/football.interface';
+import {
+  IFootballRootObject,
+  IStanding,
+} from 'src/app/core/interfaces/football.interface';
 import { FootballService } from 'src/app/core/services/football.service';
 
 @Component({
@@ -13,7 +16,7 @@ export class StandingsComponent implements OnInit {
   leagueSeasons: any;
   leagueId!: string;
   leagueStandings!: IFootballRootObject;
-  leagueTable!: any;
+  leagueTable!: IStanding[];
   season: string = '2021';
   loaded = true;
 

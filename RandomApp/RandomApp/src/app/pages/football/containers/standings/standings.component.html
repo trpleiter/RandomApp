@@ -1,19 +1,20 @@
 <div class="page-container" *ngIf="loaded">
-  <p *ngIf="leagueStandings.name !== undefined">
+  <h2 *ngIf="leagueStandings.name !== undefined">
     The standings of the {{ leagueStandings.name }}
-  </p>
-  <p>Choose which season you want to review:</p>
-  <select (change)="onSelectSeason($event)">
-    Choose which season you want to review:
-    <option
-      type="button"
-      *ngFor="let season of leagueSeasons"
-      value="{{ season.year }}"
-    >
-      {{ season.year }}
-    </option>
-  </select>
-
+  </h2>
+  <div class="select-container">
+    <p>Choose which season you want to review:</p>
+    <select (change)="onSelectSeason($event)">
+      Choose which season you want to review:
+      <option
+        type="button"
+        *ngFor="let season of leagueSeasons"
+        value="{{ season.year }}"
+      >
+        {{ season.year }}
+      </option>
+    </select>
+  </div>
   <table class="table">
     <thead>
       <tr>

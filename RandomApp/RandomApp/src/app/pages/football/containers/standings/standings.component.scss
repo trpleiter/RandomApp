@@ -1,3 +1,22 @@
+.page-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin:0 ;
+    }
+
+    select{
+        margin-left: 10px;
+    }
+}
+
 .team-logo {
 width: 30px;
 }
